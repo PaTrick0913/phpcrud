@@ -1,4 +1,5 @@
 <?php
+
 require_once('classes/database.php');
 $con = new database();
 session_start();
@@ -70,7 +71,11 @@ if (isset($_POST['delete'])) {
           <td><?php echo $row['user_name']; ?></td>
           <td><?php echo $row['address']; ?></td>
           <td>
-          <a href="#" class="btn btn-primary btn-sm">Edit</a>
+            <form action="update.php" method="POST" class="d-inline">
+            <input type="hidden" name="id" value= "<?php echo $row['user_id'];?>">
+            <button type="submit" name= "delete" class="btn btn-primary btn-sm" value = "delete"onclick="return confirm('Are you sure you want to edit this user?')"  >
+            <i class="fas fa-edit"></i>
+            </form>
         <!-- Delete button -->
         <form method="POST" class="d-inline">
             <input type="hidden" name="id" value= "<?php echo $row['user_id'];?>">
