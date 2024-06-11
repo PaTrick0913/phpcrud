@@ -1,9 +1,6 @@
-
-Dale
-Dale Vincent Montaño
 <?php
 require_once('classes/database.php');
- 
+ -
 $con = new database ();
  
  
